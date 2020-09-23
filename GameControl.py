@@ -39,7 +39,15 @@ class GameControl():
         self._client_w = r2 - l2
         self._border_l = ((r1 - l1) - (r2 - l2)) // 2
         self._border_t = ((b1 - t1) - (b2 - t2)) - self._border_l
-        self.client = 0
+        '''if self.hwnd=="Onmyoji":
+            self.client=0
+        else:
+            self.client=1
+            os.system('adb connect 127.0.0.1:7555')
+            os.system('adb devices')'''
+        self.client=1
+        os.system('adb connect 127.0.0.1:7555')
+        os.system('adb devices')
       
     def init_mem(self):
         self.hwindc = win32gui.GetWindowDC(self.hwnd)
@@ -671,7 +679,7 @@ def callback(hwnd, hwnds):
 
 
 def main():
-    hwnd = win32gui.FindWindow(0, 'Onmyoji')
+    hwnd = win32gui.FindWindow(0, 'LDPlayer(64)')
     yys = GameControl(hwnd, 0)
     yys.activate_window()
     yys.mouse_click_bg((681, 351))

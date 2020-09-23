@@ -27,13 +27,14 @@ def main():
         gameMode=int(pyautogui.prompt(text=alert+name_acc+gameMode, title='Auto ADS' , default='3'))
         isCaptain=True
         isMainDMG=True
-        windowName=int(pyautogui.prompt(text=alert+name_acc+'Enter name of window game: \n1. Onmyoji \n2. [#] Onmyoji [#] ', title='Onmyoji bot' , default='1'))
+        windowName=int(pyautogui.prompt(text=alert+name_acc+'Enter name of window game: \n1. Onmyoji \n2. LDPlayer(64) ', title='Onmyoji bot' , default='1'))
         if windowName==1:
             windowName='Onmyoji'
         else:
-            windowName='[#] Onmyoji [#]'
-        cuaso1=gw.getWindowsWithTitle(windowName)[0]
-        cuaso1.resizeTo(1138, 672)
+            windowName='LDPlayer(64)'
+        if windowName==1:
+            cuaso1=gw.getWindowsWithTitle(windowName)[0]
+            cuaso1.resizeTo(1138, 672)
         count=int(pyautogui.prompt(text=alert+name_acc+'Nhap so lan muon di: ', title='Auto ADS' , default='9999'))
         if gameMode==4:
             vitri=int(pyautogui.prompt(text=alert+name_acc+'Nhap vi tri ban muon target\nDe 0 neu ban khong muon: ', title='Auto ADS' , default='0'))
